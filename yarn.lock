@@ -3620,6 +3620,11 @@ prettier@2.1.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.2.tgz#3050700dae2e4c8b67c4c3f666cdb8af405e1ce5"
   integrity sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
 
+probot-commands@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/probot-commands/-/probot-commands-1.1.0.tgz#da485f4d2d25bfd6ec194bf5dc21a80b51e6a303"
+  integrity sha512-7pl3RZjJ2/t3h4dy/xeodkdyx6/ZZSm5ywmuZ3rPL6K7wcvguTrOobTKb/2n2G6NNnxB3rrk4z0OdEAVV/d39A==
+
 probot@9.11.5:
   version "9.11.5"
   resolved "https://registry.yarnpkg.com/probot/-/probot-9.11.5.tgz#2a27eb37cdd2cf22b757e8dc689ad589b397d2af"
