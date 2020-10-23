@@ -3,6 +3,10 @@
 [![CircleCI](https://circleci.com/gh/kevgo/prettifier.svg?style=shield)](https://circleci.com/gh/kevgo/prettifier)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/kevgo/prettifier.svg)](https://lgtm.com/projects/g/kevgo/prettifier/context:javascript)
 
+
+
+
+
 _A GitHub bot that keeps your code base consistently formatted._
 
 ---
