@@ -27,16 +27,43 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
       console.log(`${repoPrefix}: NOT A BOT COMMAND, IGNORING`)
       return
     }
-    if (command[1] !== "prettifier") {
-      console.log(`${repoPrefix}: NOT A PRETTIFIER COMMAND, IGNORING`)
+    const botName = command[1]
+    if (botName !== "prettifier") {
+      console.log(`${repoPrefix}: COMMAND FOR OTHER BOT ${botName}, IGNORING`)
       return
     }
-    if (command[2] === "debug") {
-      console.log(`${repoPrefix}: DEBUGGING`)
-      return
+    const botCommand = command[2]
+    switch (botCommand) {
+      case "debug":
+        console.log(`${repoPrefix}: DEBUGGING`)
+        return
+      case "help":
+        console.log(`${repoPrefix}: HELP COMMAND`)
+        addComment(issueID, helpTemplate(), context.github)
+        return
+      case "dev error":
+        console.log(`${repoPrefix}: SIMULATING DEV ERROR`)
+        return
+      case "user error":
+        console.log(`${repoPrefix}: SIMULATING USER ERROR`)
+        return
+      default:
+        console.log(`${repoPrefix}: UNKNOWN PRETTIFIER COMMAND: ${botCommand}`)
+        addComment(
+          issueID,
+          `unknown command: ${botCommand}\n\nValid commands are: "debug", "user error"`,
+          context.github
+        )
     }
-    console.log(`${repoPrefix}: UNKNOWN PRETTIFIER COMMAND: ${command[2]}`)
   } catch (e) {
     console.log(e)
   }
+}
+
+function helpTemplate(): string {
+  return `valid bot commands are:\n
+- **/prettifier debug** print configuration information
+- **/prettifier user error** simulate a user console.error
+- **/prettifier help** this help screen
+`
 }
