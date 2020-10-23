@@ -51,7 +51,7 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
         console.log(`${repoPrefix}: UNKNOWN PRETTIFIER COMMAND: ${botCommand}`)
         addComment(
           issueID,
-          `unknown command: ${botCommand}\n\nValid commands are: "debug", "user error"`,
+          `unknown command: ${botCommand}\n\nValid commands are: \`debug\`, \`user error\``,
           context.github
         )
     }
@@ -61,9 +61,9 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
 }
 
 function helpTemplate(): string {
-  return `valid bot commands are:\n
-- **/prettifier debug** print configuration information
-- **/prettifier user error** simulate a user console.error
-- **/prettifier help** this help screen
+  return `I understand these commands:\n
+- **/prettifier debug** prints the Prettifier configuration used for this repo
+- **/prettifier user error** simulates a user error
+- **/prettifier help** for this help screen
 `
 }
