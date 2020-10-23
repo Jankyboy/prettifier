@@ -8,7 +8,7 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
   try {
     org = context.payload.repository.owner.login
     repo = context.payload.repository.name
-    issue = context.payload.issue.id
+    issue = context.payload.issue.number
     const repoPrefix = `${org}/${repo}`
     const text = context.payload.comment.body
     console.log(`${repoPrefix}: NEW COMMENT ON ISSUE #${issue}: ${text}`)
