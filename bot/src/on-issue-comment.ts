@@ -34,7 +34,7 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
       console.log(`${repoPrefix}: DEBUGGING`)
       return
     }
-    console.log(`${repoPrefix}: UNKNOWN PRETTIFIER COMMAND: ${command}`)
+    console.log(`${repoPrefix}: UNKNOWN PRETTIFIER COMMAND: ${command[2]}`)
   } catch (e) {
     console.log(e)
   }
