@@ -28,11 +28,11 @@ export function onIssueComment(context: probot.Context<webhooks.WebhookPayloadIs
     if (command == null) {
       throw new Error("unexpected NULL result")
     }
-    if (command[0] !== "prettifier") {
+    if (command[1] !== "prettifier") {
       console.log(`${repoPrefix}: NOT A PRETTIFIER COMMAND, IGNORING`)
       return
     }
-    if (command[1] === "debug") {
+    if (command[2] === "debug") {
       console.log(`${repoPrefix}: DEBUGGING`)
       return
     }
